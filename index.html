@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - API Client</title>
+    
+    <!-- AQUÍ VINCULAMOS LA HOJA DE ESTILOS EXTERNA -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- SECCIÓN 1: AUTH (LOGIN) -->
+    <div id="auth-section" class="card">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label>Correo Electrónico:</label>
+                <input type="email" id="login-correo" required value="test@correo.com">
+            </div>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="password" id="login-password" required value="123456">
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <!-- SECCIÓN 2: DASHBOARD Y CRUD -->
+    <div id="app-section" class="hidden">
+        <div class="header-container">
+            <h2>Panel de Productos</h2>
+            <span id="user-display" style="font-weight: bold; color: #4a5568;"></span>
+        </div>
+        
+        <hr>
+
+        <!-- Formulario para Crear / Editar Producto -->
+        <div class="card">
+            <h3><span id="form-title">Crear</span> Producto</h3>
+            <form id="product-form">
+                <input type="hidden" id="prod-id">
+                <div class="form-group">
+                    <label>Nombre del Producto:</label>
+                    <input type="text" id="prod-nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción:</label>
+                    <textarea id="prod-descripcion" rows="3" required></textarea>
+                </div>
+                <button type="submit" id="btn-submit-prod">Guardar Producto</button>
+                <button type="button" id="btn-cancel-edit" class="secondary hidden">Cancelar Edición</button>
+            </form>
+        </div>
+
+        <hr>
+        
+        <h3>Listado de Productos</h3>
+        <div id="products-list">
+            <!-- Los productos se cargarán dinámicamente aquí -->
+        </div>
+    </div>
+
+    <!-- Script de lógica -->
+    <script src="app.js"></script>
+</body>
+</html>
