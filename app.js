@@ -20,7 +20,7 @@ const fetchConfig = {
     credentials: 'include' 
 };
 
-// --- LOGIC: AUTENTICACIÓN ---
+//LOGICA: AUTENTICACIÓN
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const correo = document.getElementById('login-correo').value;
@@ -43,7 +43,7 @@ loginForm.addEventListener('submit', async (e) => {
             authSection.classList.add('hidden');
             appSection.classList.remove('hidden');
             
-            // Cargar productos una vez logueado
+            // Cargar productos 
             cargarProductos();
         } else {
             alert(data.message || 'Error al iniciar sesión');
@@ -57,7 +57,7 @@ loginForm.addEventListener('submit', async (e) => {
 
 //  LOGICA: CRUD PRODUCTOS 
 
-// 1. OBTENER (READ)
+// 1. OBTENER PRODUCTOS
 async function cargarProductos() {
     try {
         const response = await fetch(`${API_URL}/productos`, fetchConfig);
